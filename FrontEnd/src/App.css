@@ -1,7 +1,57 @@
 .App{
     display: flex;
     height: 100%;
+    position: relative;
+    justify-content: center;
 }
+
+.addConfesionN {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: grey;
+    border-radius: 5px;
+    transition-delay: 1s;
+    display: none;
+}
+
+.addConfesionV {
+    position: absolute;
+    top: 35%;
+    background-color: grey;
+    border-radius: 5px;
+    width: 500px;
+}
+
+
+.addConfesion{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+input{
+    width: 80%;
+    border: 1px black solid;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.publicConfesionForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+}
+
+.formPrivateContainer, .formPublicContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .leftMenu{
     width: 30%;
@@ -27,17 +77,37 @@
     gap: 50px;
 }
 
+a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+a:hover{
+    color: rgb(192, 84, 102);
+    font-weight: bold;
+}
+
+.logoutButton{
+    width: 100%;
+    border: 1px black solid;
+    padding: 8px;
+    background-color: rebeccapurple;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.logoutButton:hover{
+    background-color: rgb(65, 30, 100);
+}
+
 .confesionsContainer{
     overflow-y: auto;
 }
 
 .confesionsContainer::-webkit-scrollbar{
-    width: 5px;
-}
-
-.confesionsContainer::-webkit-scrollbar-thumb{
-    background-color: rgb(77, 50, 104);
-    border-radius: 5px;
+    display: none;
 }
 
 #confesionsList{
@@ -64,7 +134,7 @@
 }
 
 .yourConfesions::-webkit-scrollbar-thumb{
-    background-color: rgb(77, 50, 104);
+    background-color: rgb(122, 102, 143);
     border-radius: 5px;
 }
 

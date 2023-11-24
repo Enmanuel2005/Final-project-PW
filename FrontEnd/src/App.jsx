@@ -1,101 +1,87 @@
 import { useState } from 'react'
 import './App.css'
+import Button from './components/Button'
+import Dl from './components/Dl'
+import A from './components/A'
+import Label from './components/Label'
+import Input from './components/Input'
+import 'animate.css';
 
 function App() {
 
+  const [doConfesion, setDoConfesion] = useState('addConfesionN');
+
+  const changeClass = (e) => {
+    e.preventDefault();
+    setDoConfesion(doConfesion === 'addConfesionN' ? 'addConfesionV animate__animated animate__bounceInDown' : 'addConfesionN');
+  }
+
   return (
     <div className="App">
+      <div className={`${doConfesion}`}>
+        <div className='addConfesion'>
+          <div className='formPublicContainer'>
+            <form action="" className='publicConfesionForm'>
+              <h3>Añadir una confesion publica.</h3>
+              <Input placeholder={'Nombre completo:'} />
+              <Input placeholder={'algo:'} />
+              <Input />
+              <Button label={'Añadir confesion'} />
+            </form>
+          </div>
+          <hr />
+          <div className='formPrivateContainer'>
+            <form action="" className='publicConfesionForm'>
+              <h3>Añadir una confesion privada.</h3>
+              <Input placeholder={'Nombre completo:'} />
+              <Input placeholder={'algo:'} />
+              <Input />
+              <Button label={'Añadir confesion'} />
+            </form>
+          </div>
+        </div>
+      </div>
       <div className="leftMenu">
         <div className="infoContainer">
-          <label htmlFor="">Enmanuel Zorrilla Pimentel</label>
-          <label htmlFor="">enmanuelzorrilla56@gmail.com</label>
+          <Label label={'Enmanuel Zorrilla Pimentel'} />
+          <Label label={'enmanuelzorrilla56@gmail.com'} />
         </div>
         <div className="aLeft">
           <li className='leftList'>
-            <a href="">Mi perfil</a>
-            <a href="">Hacer una confesion</a>
-            <a href="">Confesiones Publicas</a>
-            <a href="">Confesiones Privadas</a>
+            <A label={'Mi perfil'} />
+            <A label={'Hacer una confesion'} onClick={changeClass} />
+            <A label={'Confesiones Publicas'} />
+            <A label={'Confesiones Privadas'} />
           </li>
         </div>
         <div className="buttonContainer">
-          <button className='logoutButton'>Cerrar Sesion</button>
+          <Button className={'logoutButton'} label={'Cerrar Sesion'} />
         </div>
       </div>
       <div className="confesionsContainer">
-        <dl id='confesionsList'>
-          <dt>Adios</dt>
-          <dd>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.</dd>
-
-          <dt>Hola</dt>
-          <dd>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium itaque temporibus ad libero in? Nostrum aut modi odit eveniet saepe facere, nulla architecto asperiores fugiat officiis aspernatur alias cumque quaerat?</dd>
-
-          <dt>GoodBye</dt>
-          <dd>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum consectetur hic nemo illo nihil delectus voluptatum atque similique unde facere mollitia sit eos totam nisi, sapiente, accusantium quo excepturi aperiam.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-        </dl>
+        <Dl id={'confesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'confesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'confesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'confesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'confesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'confesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'confesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'confesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'confesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
       </div>
       <div className='yourConfesions'>
         <div className="tittleYourConfesionsContainer">
           <h2 className='tittleYourConfesions'>Tus Confesiones</h2>
         </div>
-        <dl id='yourConfesionsList'>
-          <dt>Adios</dt>
-          <dd>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.</dd>
-
-          <dt>Hola</dt>
-          <dd>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium itaque temporibus ad libero in? Nostrum aut modi odit eveniet saepe facere, nulla architecto asperiores fugiat officiis aspernatur alias cumque quaerat?</dd>
-
-          <dt>GoodBye</dt>
-          <dd>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum consectetur hic nemo illo nihil delectus voluptatum atque similique unde facere mollitia sit eos totam nisi, sapiente, accusantium quo excepturi aperiam.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-
-          <dt>Hello</dt>
-          <dd>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laborum dolorum, non rerum vitae voluptas ullam. Quod doloribus architecto aperiam voluptatibus reiciendis? Provident officiis quae qui harum quas ut alias.</dd>
-        </dl>
+        <Dl id={'yourConfesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'yourConfesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'yourConfesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'yourConfesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'yourConfesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'yourConfesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'yourConfesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'yourConfesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
+        <Dl id={'yourConfesionsList'} tittle={'hola'} info={'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus praesentium beatae nobis, doloremque neque maxime quasi aperiam aliquid unde obcaecati nostrum, perspiciatis harum necessitatibus blanditiis inventore rerum. Ut, omnis ullam.'} />
       </div>
     </div>
   )
