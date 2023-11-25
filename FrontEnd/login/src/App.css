@@ -1,0 +1,83 @@
+.App {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+}
+
+.formRegisterContainer {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  padding-bottom: 30px;
+  background-color: rgb(255, 255, 255);
+  width: 400px;
+  opacity: 0.7;
+  gap: 30px;
+  padding-top: 30px;
+  border-radius: 5px;
+}
+
+.formRegisterContainer > form{
+  width: 248.63px;
+}
+
+.formLoginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  padding-bottom: 30px;
+  background-color: rgb(255, 255, 255);
+  width: 400px;
+  opacity: 0.7;
+  gap: 30px;
+  padding-top: 30px;
+  border-radius: 5px;
+}
+
+.labels {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px black solid;
+  background-color: rgb(230, 222, 222);
+}
+
+button {
+  padding: 15px;
+  border: 0px black solid;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(84, 172, 243);
+}
+
+button:active {
+  background-color: rgb(63, 130, 185);
+}
+
+.linkLabel {
+  color: rgb(84, 172, 243);
+  cursor: pointer;
+}
+
+label{
+  font-size: 13px;
+}

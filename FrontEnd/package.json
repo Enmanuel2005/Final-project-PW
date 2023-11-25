@@ -2,7 +2,7 @@
   "name": "final-project",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "firebase": "^10.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
