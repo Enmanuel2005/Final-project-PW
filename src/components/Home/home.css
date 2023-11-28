@@ -1,0 +1,111 @@
+.navBarContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: aqua;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.homeContainer{
+    position: relative;
+}
+
+.buttonAddPost{
+    margin-left: 130px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.postsContainer{
+    padding: 0px 20px 0px 20px;
+    border-radius: 5px
+}
+
+.formAddPost{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: grey;
+    width: 400px;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    gap: 15px;
+}
+
+.headerForm{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tittleForm{
+    margin-right: 55px;
+}
+
+.exitForm{
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+
+}
+
+.tittlePostContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+dd{
+    padding: 15px;
+}
+
+dl{
+    margin-top: 20px;
+    background-color: rgb(199, 184, 184);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+dt{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+textarea{
+    resize: none;
+    padding: 10px;
+    background-color: rgb(230, 222, 222);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+textarea:focus{
+    border: none;
+    outline: none;
+}
+
+textarea::placeholder{
+    font-size: 20px;
+}
+
+.namePost{
+    font-size: 30px;
+    color: white;
+}
